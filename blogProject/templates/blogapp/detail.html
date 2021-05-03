@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body_block1 %}
+<article class="templatemo-item">
+    <h2>Blogs</h2>
+    <img src="{% static 'images/fujifilm.jpg' %}" alt="Gutman Island" class="img-thumbnail">
+    <br>
+    <br>
+    <h1>{{post.title | title }}</h1>
+    <p>Published on {{post.publish}} by {{post.author | title }}</p>
+    <p>{{post.body | linebreaks }}</p>
+    <a href="/{{post.id}}/share" class="btn btn-warning disabled">Share</a>
+</article><hr>
+
+     <div class="card-body">
+         {% if new_comment %}
+            <div class="alert alert-success" role="alert">
+                Your comment needs to be approved by ADMIN
+            </div>
+         {% endif %}
+
+            <h3>Leave a comment</h3>
+            <form method="post" style="margin-top: 1.3em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </form>
+
+     </div>
+
+    {% with comments.count as comment_count %}
+        <h3> {{comment_count}} Comment{{comment_count|pluralize}}</h3>
+    {% endwith %}
+    {% for comment in comments %}
+
+        <div class="comments" style="padding: 10px;">
+            <p class="heading">
+                Commented by {{ comment.name }}
+                on {{ comment.created_on }}
+
+            </p>
+            {{ comment.body | linebreaks }}
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

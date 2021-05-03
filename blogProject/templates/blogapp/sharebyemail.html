@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body_block1 %}
+<h2>Blogs</h2>
+    <img src="{% static 'images/gutman_island.jpg' %}" alt="Gutman Island" class="img-thumbnail">
+    <br>
+    <br>
+
+    {% if sent %}
+        <h3> Email Succesfully sent </h3>
+        <p> {{post.title}} was sent over mail </p>
+    {% else %}
+        <h3> Share {{post.title}} over mail </h3>
+        <form method="post">
+        {{form | crispy}}
+        {% csrf_token %}
+        <input type="submit" value="Send" class="btn btn-warning">
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% load static %}
+
+{% block body_block1 %}
+
+<div class="tm-right-inner-container">
+	<h1 class="templatemo-header">Testimonials</h1>
+
+	<div class="templatemo-item templatemo-testimonial">
+		<div class="templatemo-border-left">
+			<p><i class="fa fa-quote-left fa-medium"></i>
+				I just wanted to share a quick note and let you know that you guys do a really good job. I’m glad I decided to work with you. It’s really great how easy your websites are to update and manage. I never have any problem at all.<i class="fa fa-quote-right fa-medium"></i>
+			</p>
+			<img src="{% static 'images/testimonial02.jpg' %}" alt="Testimonial 2" class="img-circle img-thumbnail">
+			<footer>Paula, Tech Company</footer>
+		</div>
+	</div>
+
+	<div class="templatemo-item templatemo-testimonial">
+		<div class="templatemo-border-right">
+			<p><i class="fa fa-quote-left fa-medium"></i>
+				I just wanted to share a quick note and let you know that you guys do a really good job. I’m glad I decided to work with you. It’s really great how easy your websites are to update and manage. I never have any problem at all.<i class="fa fa-quote-right fa-medium"></i>
+			</p>
+			<img src="{% static 'images/testimonial03.jpg' %}" alt="Testimonial 3" class="img-circle img-thumbnail">
+			<footer class="text-right">Nancy, Zero Company</footer>
+		</div>
+	</div>
+
+{% endblock %}
+
+

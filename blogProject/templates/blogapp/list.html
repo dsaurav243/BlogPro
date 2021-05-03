@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% load static %}
+
+{% block body_block1 %}
+<article class="templatemo-item">
+    <h2>Blogs</h2>
+    <img src="{% static 'images/gutman_island.jpg' %}" alt="Gutman Island" class="img-thumbnail">
+    <br>
+    <br>
+
+    {% if tag %}
+        <h3> Posts tagged with {{tag.name}}</h3>
+    {% endif %}
+
+    {% for blog in posts %}
+        <li>{{blog.title | upper}}</li>
+        <p>Tags::
+            {% for tag in blog.tags.all %}
+            <a href="{%url 'post_list_by_tag_name' tag.slug %}" class="btn btn-info btn-sm">{{tag.name}}</a>
+            {% endfor %}
+        </p>
+        <p>{{blog.body |truncatewords:30 | linebreaks }} <a href="{{blog.get_absolute_url}}" class="btn btn-warning">Read More</a></p>
+        <br>
+    {% endfor %}
+
+    {% include 'blogapp/pagination.html' with page=posts %}
+
+</article><hr>
+{% endblock %}

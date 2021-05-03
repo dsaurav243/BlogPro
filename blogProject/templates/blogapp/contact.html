@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% load static %}
+
+{% block body_block1 %}
+
+<div class="tm-right-inner-container">
+	<h1 class="templatemo-header">Contacts</h1>
+
+	<div class="templatemo-item templatemo-testimonial">
+		<div class="templatemo-border-left">
+			<p><i class="fa fa-quote-left fa-medium"></i>
+				Please reach out the mail for any queries <br>
+				-kalkeya243@gmail.com<i class="fa fa-quote-right fa-medium"></i>
+			</p>
+			<img src="{% static 'images/csk.jpg' %}" alt="Testimonial 2" class="img-circle img-thumbnail">
+			<footer>Thala Fan, -kalkeya</footer>
+		</div>
+	</div>
+
+{% endblock %}
+
+

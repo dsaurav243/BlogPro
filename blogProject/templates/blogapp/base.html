@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load blog_tags %}
+{% load static %}
+<head>
+	<title>Blogs</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/templatemo_style.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/demo.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="templatemo-logo visible-xs-block">
+	</div>
+	<div class="templatemo-container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg left-container">
+			<div class="tm-left-inner-container">
+				<br><br><br><br>
+				<ul class="nav nav-stacked templatemo-nav">
+					<img src="{% static 'images/logo.jpg' %}" alt="Testimonial 2" class="img-circle img-thumbnail"><br>
+					<br>
+				  <li><a href="/"><i class="fa fa-home fa-medium"></i>Homepage</a></li>
+				  <li><a href="/list"><i class="fa fa-shopping-cart fa-medium"></i>Blogs</a></li>
+				  <li><a href="/services"><i class="fa fa-send-o fa-medium"></i>Services</a></li>
+				  <li><a href="/testimonials"><i class="fa fa-comments-o fa-medium"></i>Testimonials</a></li>
+				  <li><a href="/contact"><i class="fa fa-envelope-o fa-medium"></i>Contact</a></li>
+					<li>Total Posts count till now  <span class="pcount"> {% total_posts %} </span></li>
+					<li>Latest posts : {% show_latest_posts %}</li>
+				</ul>
+
+
+			</div>
+
+		</div> <!-- left section -->
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
+			<div class="tm-right-inner-container">
+				{% block body_block1 %}
+				{% endblock %}
+
+				<footer>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-copyright">Copyright &copy; 2084 Your Company Name <!-- Credit: www.templatemo.com --></p>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-social">
+						<a href="#"><i class="fa fa-facebook fa-medium"></i></a>
+						<a href="#"><i class="fa fa-twitter fa-medium"></i></a>
+						<a href="#"><i class="fa fa-google-plus fa-medium"></i></a>
+						<a href="#"><i class="fa fa-youtube fa-medium"></i></a>
+						<a href="#"><i class="fa fa-linkedin fa-medium"></i></a>
+					</p>
+				</footer>
+			</div>
+		</div> <!-- right section -->
+	</div>
+
+</body>
+</html>

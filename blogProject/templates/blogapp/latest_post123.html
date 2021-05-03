@@ -1,0 +1,13 @@
+
+<ul>
+    {% for post in latest_posts %}
+      <a href="{{post.get_absolute_url}}">{{post.title}}</a></li> <br>
+    {% endfor %}
+</ul>
+
+<h4> Mosts Commented posts</h4>
+<ul>
+    {% for post in most_commented %}
+      <a href="{{post.get_absolute_url}}">{{post.title}}</a></li> <br>
+    {% endfor %}
+</ul>
